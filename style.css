@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+.mic {
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mic-icon {
+    font-size: 100px;
+    z-index: 2;
+}
+.mic-shadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 20px 20px #1c084f;
+    width: 250px;
+    height: 250px;
+    background-color: #2f1e5f;
+    animation: circle-size 0.5s linear infinite alternate;
+}
+.mic::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: #1a084e;
+    border-radius: 50%;
+    z-index: 0;
+}
+@keyframes circle-size {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
